@@ -47,22 +47,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         let cargoStatus = document.getElementById("cargoStatus");
         let launchStatus = document.getElementById("launchStatus");
     
-        //let validatePilot = validateInput(pilot);
-        //let validateCopilot = validateInput(copilot);
-        //let validateFuel = validateInput(fuelLevel);
-        //let validateCargo = validateInput(cargoLevel);
+        
 
         
 
-        /*if(validatePilot === "Empty" || validateCopilot === "Empty" || validateFuel === "Empty" || validateCargo === "Empty"){
-            alert("All fields are required!");
-            
-        }
-        else if (validatePilot === "Is a Number" && validateCopilot === "Is a Number" && validateFuel === "Not a Number" && validateCargo === "Not a Number"){
-            alert("Make sure to enter valid information for each field!");
-            
-        }
-    */
+        
 
        /* if (fuelLevel < 10000 && cargoLevel > 10000){
             list.style.visibility = "visible";
