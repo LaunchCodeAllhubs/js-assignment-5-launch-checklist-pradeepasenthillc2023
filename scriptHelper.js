@@ -41,17 +41,18 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let pilotStatus = document.getElementById("pilotStatus");
+        let pilotStatus = document.getElementById("pilotStatus");
         let copilotStatus = document.getElementById("copilotStatus");
         let fuelStatus = document.getElementById("fuelStatus");
         let cargoStatus = document.getElementById("cargoStatus");
-    
-        let validatePilot = validateInput(pilot);
-        let validateCopilot = validateInput(copilot);
-        let validateFuel = validateInput(fuelLevel);
-        let validateCargo = validateInput(cargoLevel);
-
         let launchStatus = document.getElementById("launchStatus");
+    
+        //let validatePilot = validateInput(pilot);
+        //let validateCopilot = validateInput(copilot);
+        //let validateFuel = validateInput(fuelLevel);
+        //let validateCargo = validateInput(cargoLevel);
+
+        
 
         /*if(validatePilot === "Empty" || validateCopilot === "Empty" || validateFuel === "Empty" || validateCargo === "Empty"){
             alert("All fields are required!");
@@ -89,6 +90,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             cargoLevel = "low enough";
 
         }*/
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
+        list.style.visibility = 'hidden';
+        //fuelStatus.innerHTML = `Fuel level ${fuelLevel} for launch`;
+        //cargoStatus.innerHTML = `Cargo mass ${cargoLevel} for launch`;
         if (Number(fuelLevel) < 10000) {
             list.style.visibility = 'visible';
             fuelStatus.innerHTML = 'Fuel level too low for launch';       
@@ -119,10 +125,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             fuelStatus.innerHTML = "Fuel level high enough for launch";
         } 
         
-        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
-        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
-        //fuelStatus.innerHTML = `Fuel level ${fuelLevel} for launch`;
-        //cargoStatus.innerHTML = `Cargo mass ${cargoLevel} for launch`;
+       
 
     }
             
