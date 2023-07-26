@@ -12,8 +12,26 @@ window.addEventListener("load", function() {
         let coPilotNameInput = document.querySelector("input[name=copilotName]");
         let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
         let cargoMassInput = document.querySelector("input[name=cargoMass]");
+        let list= document.getElementById("faultyItems");
+        // alert(list.value);
+        list.style.visibility = "hidden";
+       
+         //check all fields are filled
+         if (validateInput(pilotNameInput.value) === `Empty`|| validateInput(coPilotNameInput.value) === `Empty`|| 
+         validateInput(fuelLevelInput.value) === `Empty`||validateInput(cargoMassInput.value) === `Empty`) {
+             alert(`All fields are required`);
+         }
+         //check that fuelLevel and cargoLevel are numbers and pilot and co-pilot are strings
+         else if (validateInput(fuelLevelInput.value) === 'Not a Number' || validateInput(cargoMassInput.value) === 'Not a Number') {
+             alert(`Please enter numerical values for Fuel Level and Cargo Mass`);
+         } else if (validateInput(pilotNameInput.value)===`Is a Number`||validateInput(coPilotNameInput.value)===`Is a Number`) {
+             alert('Please do not enter numbers for name of pilot or co-pilot');
+         } 
+         else{
+         formSubmission(document,list,pilotNameInput.value,coPilotNameInput.value,fuelLevelInput.value,cargoMassInput.value);
+         }
 
-        formSubmission(document, pilotNameInput, coPilotNameInput, fuelLevelInput, cargoMassInput);
+        /*formSubmission(document, pilotNameInput, coPilotNameInput, fuelLevelInput, cargoMassInput);
         //Validate input values against empty
         if (
             pilotNameInput.value === "" ||
@@ -23,7 +41,7 @@ window.addEventListener("load", function() {
           ) {
             alert("All fields are required!");
             return;
-          }
+          }*/
           
     });
 
