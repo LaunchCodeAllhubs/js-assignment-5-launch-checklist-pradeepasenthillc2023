@@ -12,7 +12,7 @@ window.addEventListener("load", function() {
         let coPilotNameInput = document.querySelector("input[name=copilotName]");
         let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
         let cargoMassInput = document.querySelector("input[name=cargoMass]");
-        let list = document.getElementById("faultyItems");
+       
     
        
          //check all fields are filled
@@ -37,6 +37,10 @@ window.addEventListener("load", function() {
             formSubmission(document,list,pilotNameInput.value,coPilotNameInput.value,fuelLevelInput.value,cargoMassInput.value);
             }
         });
+
+        let list = document.getElementById("faultyItems");
+        list.style.visibility='hidden';
+        
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse= myFetch();
